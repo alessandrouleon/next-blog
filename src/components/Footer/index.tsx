@@ -1,7 +1,7 @@
 'use client';
 import clsx from 'clsx';
 
-export default function Header() {
+export default function Footer() {
   return (
     <div>
       <h1
@@ -12,9 +12,8 @@ export default function Header() {
           'hover:scale-105',
           'hover:bg-blue-50',
         )}
-        onClick={() => alert(123)}
       >
-        Header Component
+        Footer Component
       </h1>
     </div>
   );

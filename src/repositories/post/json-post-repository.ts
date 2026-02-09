@@ -5,7 +5,20 @@ import { PostRepository } from './post-repository';
 
 const ROUT_DIR = process.cwd();
 const JSON_POST_FILE = resolve(ROUT_DIR, 'src', 'db', 'seed', 'posts.json');
+
+const SIMULATION_WAITING_TIME = 5000;
+
 export class JsonPostRepository implements PostRepository {
+  private async simulateWaitingTime() {
+    if (SIMULATION_WAITING_TIME <= 0) {
+      return;
+    }
+
+    await new Promise((resolve) =>
+      setTimeout(resolve, SIMULATION_WAITING_TIME),
+    );
+  }
+
   private async readFromDisk() {
     const jsonContent = await readFile(JSON_POST_FILE, 'utf-8');
     const parsedJson = JSON.parse(jsonContent);
@@ -14,11 +27,13 @@ export class JsonPostRepository implements PostRepository {
   }
 
   async findAll(): Promise<PostModel[]> {
+    await this.simulateWaitingTime();
     const posts = await this.readFromDisk();
     return posts;
   }
 
   async findById(id: string): Promise<PostModel | null> {
+    await this.simulateWaitingTime();
     const posts = await this.readFromDisk();
     const post = posts.find((post) => post.id === id) ?? null;
     if (!post) {
