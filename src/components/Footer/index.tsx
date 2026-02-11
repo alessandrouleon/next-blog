@@ -6,14 +6,14 @@ export default function Footer() {
     <div>
       <h1
         className={clsx(
-          'text-6xl font-bold',
+          'text-1xl font-bold',
           'text-blue-500',
           'transition duration-1000',
           'hover:scale-105',
           'hover:bg-blue-50',
         )}
       >
-        Footer Component
+        Footer
       </h1>
     </div>
   );

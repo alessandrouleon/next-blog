@@ -6,7 +6,7 @@ import { PostRepository } from './post-repository';
 const ROUT_DIR = process.cwd();
 const JSON_POST_FILE = resolve(ROUT_DIR, 'src', 'db', 'seed', 'posts.json');
 
-const SIMULATION_WAITING_TIME = 5000;
+const SIMULATION_WAITING_TIME = 0;
 
 export class JsonPostRepository implements PostRepository {
   private async simulateWaitingTime() {

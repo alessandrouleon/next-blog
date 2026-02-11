@@ -1,21 +1,20 @@
-'use client';
 import clsx from 'clsx';
+import Link from 'next/link';
 
 export default function Header() {
   return (
-    <div>
+    <header>
       <h1
         className={clsx(
-          'text-6xl font-bold',
-          'text-blue-500',
-          'transition duration-1000',
-          'hover:scale-105',
-          'hover:bg-blue-50',
+          'py-8 text-4xl/normal font-extrabold',
+          'sm:py-10 sm:text-5xl/normal',
+          'md:py-11 md:text-6xl/normal',
+          'lg:py-12 lg:text-7xl/normal',
+          'xl:py-14 xl:text-8xl/normal',
         )}
-        onClick={() => alert(123)}
       >
-        Header Component
+        <Link href="#">The Blog</Link>
       </h1>
-    </div>
+    </header>
   );
 }
