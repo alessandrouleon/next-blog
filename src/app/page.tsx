@@ -1,6 +1,7 @@
 import { Container } from '@/components/Container';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
+import { PostHeading } from '@/components/PostHeading';
 import { PostsList } from '@/components/PostsList';
 import { SpinLoader } from '@/components/SpinLoader';
 import { postRepository } from '@/repositories/post';
@@ -29,11 +30,11 @@ export default async function HomePage() {
             02 de janeiro de 2026
           </time>
 
-          <h1 className="text-2xl/tight font-extrabold sm:text-4xl">
-            <Link href="#">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </Link>
-          </h1>
+          <PostHeading
+            as="h1"
+            children="Lorem ipsum dolor sit amet consectetur adipisicing elit."
+            url="https://www.google.com"
+          />
 
           <p>
             Quisquam accusamus voluptatibus, natus, repellat, quae voluptate
